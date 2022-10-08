@@ -1,0 +1,28 @@
+.loading__container {
+  background: #E0E1E9;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading__container > div {
+  width: 50vw;
+  max-width: 350px;
+  height: auto;
+}
+.loading__container h1 {
+  font-size: 3rem;
+  color: #1d3d90;
+  font-weight: 900;
+  text-align: center;
+}
+.loading__container__circle path {
+  transform-origin: center !important;
+}
+@media screen and (max-width: 700px) {
+  .loading__container h1 {
+    font-size: 8vw;
+  }
+}
+/*# sourceMappingURL=loadingPage.css.map */
