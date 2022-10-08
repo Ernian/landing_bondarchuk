@@ -23,7 +23,7 @@
   }
 
   .card .avatar {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
   }
 
   .card h1 {
@@ -36,11 +36,11 @@
 
   .card p {
     font-size: 18px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .card a {
-    padding: 12px 14px;
+    padding: 12px;
     font-size: 18px;
   }
 
