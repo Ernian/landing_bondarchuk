@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 650px) {
   .card-container {
     margin-top: 20px;
     padding-inline: 20px;
