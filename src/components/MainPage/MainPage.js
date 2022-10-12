@@ -10,15 +10,15 @@ import web_icon from '../../images/web.svg'
 import bg from '../../images/background_new.png'
 import logo from '../../images/logo.svg'
 import logoEn from '../../images/logoEn.svg'
-import {useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 const MainPage = () => {
     const [currenLanguage, setCurrentLanguage] = useState('ru');
 
     const language = {
-        ru:{
+        ru: {
             name: "Бондарчук",
             secondName: "Алексей Владимирович",
             description: (
@@ -34,8 +34,8 @@ const MainPage = () => {
                         duration: 0.5
                     }}
                 >
-                    Партнёр<br/>
-                    Генеральный директор<br/>
+                    Партнёр<br />
+                    Генеральный директор<br />
                     СтройМонолитСервис
                 </motion.p>
             ),
@@ -52,12 +52,12 @@ const MainPage = () => {
             news: "Новости",
             address: (
                 <p>
-                    Пресненская набережная, 10,<br/>
+                    Пресненская набережная, 10,<br />
                     Блок С, 43-й этаж
                 </p>
             )
         },
-        en:{
+        en: {
             name: "bondarchuk",
             secondName: "aleksey vladimirovich",
             description: (
@@ -73,7 +73,7 @@ const MainPage = () => {
                         duration: 0.5
                     }}
                 >
-                    Partner<br/>
+                    Partner<br />
                     CEO StroyMonolitServis
                 </motion.p>
             ),
@@ -90,7 +90,7 @@ const MainPage = () => {
             news: "News",
             address: (
                 <p>
-                    Presnenskaya embankment, 10,
+                    Presnenskaya embankment, 10,<br />
                     Block C, 43rd floor
                 </p>
             )
@@ -122,23 +122,23 @@ const MainPage = () => {
 
     const menuLinks = [
         {
-            href: `https://orientir.ru/${currenLanguage==="en"?"en/":""}about`,
+            href: `https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}about`,
             text: language[currenLanguage].about
         },
         {
-            href: `https://orientir.ru/${currenLanguage==="en"?"en/":""}services`,
+            href: `https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}services`,
             text: language[currenLanguage].services
         },
         {
-            href: `https://orientir.ru/${currenLanguage==="en"?"en/":""}objects`,
+            href: `https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}objects`,
             text: language[currenLanguage].portfolio
         },
         {
-            href: `https://orientir.ru/${currenLanguage==="en"?"en/":""}cases`,
+            href: `https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}cases`,
             text: language[currenLanguage].cases
         },
         {
-            href: `https://orientir.ru/${currenLanguage==="en"?"en/":""}news`,
+            href: `https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}news`,
             text: language[currenLanguage].news
         },
     ]
@@ -146,7 +146,7 @@ const MainPage = () => {
     const [isMenu, setIsMenuOpen] = useState(false);
 
     const handleMenuClick = () => {
-      setIsMenuOpen(prevState => !prevState)
+        setIsMenuOpen(prevState => !prevState)
     }
 
     return (
@@ -168,7 +168,7 @@ const MainPage = () => {
                 duration: .5
             }}
         >
-            <div className={'bg'} style={{backgroundImage: `url("${bg}")`}}/>
+            <div className={'bg'} style={{ backgroundImage: `url("${bg}")` }} />
             <div className={'card'}>
                 <AnimatePresence>
                     {!!isMenu && (
@@ -185,51 +185,50 @@ const MainPage = () => {
                             }}
                             transition={{
                                 duration: .5,
-                                delay: isMenu ? 0:.5
+                                delay: isMenu ? 0 : .5
                             }}
                         >
                             <span onClick={handleMenuClick}>
                                 {language[currenLanguage].close}
                             </span>
                             <ul>
-                                {menuLinks.map((item, index)=>(
+                                {menuLinks.map((item, index) => (
                                     <li key={index}><a target={"_blank"} href={item.href}>{item.text}</a></li>
                                 ))}
                             </ul>
                             <div>
                                 <p><a href="tel:84999401220">+7 499 940 12 20</a></p>
                                 <p><a href="mailto:info@orientir.ru">info@orientir.ru</a></p>
-                                <br/>
+                                <br />
                                 <p><a target={"_blank"} href="https://goo.gl/maps/HVAG3DTjWEAdFD7WA">
-                                    Пресненская набережная, 10,<br/>
-                                    Блок С, 43-й этаж
+                                    {language[currenLanguage].address}
                                 </a></p>
                             </div>
-                            
+
                         </motion.div>
                     )}
                 </AnimatePresence>
                 <motion.header
                     initial={{
-                        opacity: isMenu ? 1:0,
-                        translateY: isMenu ? "0px":"calc(-100% - 50px)",
+                        opacity: isMenu ? 1 : 0,
+                        translateY: isMenu ? "0px" : "calc(-100% - 50px)",
                     }}
                     animate={{
-                        translateY: !isMenu ? "0px":"calc(-100% - 50px)",
-                        opacity: !isMenu ? 1:0
+                        translateY: !isMenu ? "0px" : "calc(-100% - 50px)",
+                        opacity: !isMenu ? 1 : 0
                     }}
                     transition={{
                         duration: .5,
-                        delay: isMenu ? 0:.25
+                        delay: isMenu ? 0 : .25
                     }}
                 >
-                    <a target={"_blank"} href={`https://orientir.ru/${currenLanguage==="en"?"en/":""}`}>
-                        <img src={language[currenLanguage].logo} alt="logo"/>
+                    <a target={"_blank"} href={`https://orientir.ru/${currenLanguage === "en" ? "en/" : ""}`}>
+                        <img src={language[currenLanguage].logo} alt="logo" />
                     </a>
                     <div className={'btns'}>
                         <span className={'language-btn'}
-                              onClick={() => setCurrentLanguage(currenLanguage === "ru" ? "en" : "ru")}>{currenLanguage === "ru" ? "en" : "ru"}</span>
-                        <img className={'menu-btn'} onClick={handleMenuClick} src={menu_icon} alt="menu"/>
+                            onClick={() => setCurrentLanguage(currenLanguage === "ru" ? "en" : "ru")}>{currenLanguage === "ru" ? "en" : "ru"}</span>
+                        <img className={'menu-btn'} onClick={handleMenuClick} src={menu_icon} alt="menu" />
                     </div>
                 </motion.header>
 
@@ -246,7 +245,7 @@ const MainPage = () => {
                             duration: .5
                         }}
                         className={'avatar'}
-                        style={{backgroundImage: `url("${avatar}")`}}
+                        style={{ backgroundImage: `url("${avatar}")` }}
                     />
                     <motion.h1
                         initial={{
@@ -297,11 +296,11 @@ const MainPage = () => {
                                     transform: "scale(1)"
                                 }}
                                 transition={{
-                                    delay: 1.8+((index+1)*0.15),
+                                    delay: 1.8 + ((index + 1) * 0.15),
                                     duration: .5
                                 }}
                             >
-                                <img src={link.icon} alt={link.text}/>
+                                <img src={link.icon} alt={link.text} />
                                 {link.text}
                             </motion.a>
                         ))}
