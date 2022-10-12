@@ -1,6 +1,7 @@
 @media screen and (min-width: 420px) {
   .container {
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 5px;
   }
 
   .card {
